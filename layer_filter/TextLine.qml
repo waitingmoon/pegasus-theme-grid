@@ -52,7 +52,7 @@ FocusScope {
         color: "#eee"
         font {
             pixelSize: root.fontSize
-            family: globalFonts.sans
+            family: regularFont.name
         }
     }
 
@@ -67,7 +67,7 @@ FocusScope {
         color: "#bbb"
         font {
             pixelSize: root.fontSize
-            family: globalFonts.sans
+            family: regularFont.name
             italic: true
         }
 

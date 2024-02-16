@@ -49,18 +49,18 @@ FocusScope {
 
         Text {
             id: header
-            text: "Filters"
+            text: "フィルター"
             color: root.textColor
             font.bold: true
             font.pixelSize: vpx(26)
-            font.family: globalFonts.sans
+            font.family: regularFont.name
             height: font.pixelSize * 1.5
         }
 
         TextLine {
             id: itemTitle
 
-            placeholder: "title"
+            placeholder: "タイトル"
             placeholderColor: "#bbb"
             textColor: root.textColor
             fontSize: content.normalTextSize
@@ -75,7 +75,7 @@ FocusScope {
 
         CheckBox {
             id: itemFavorite
-            text: "Favorite"
+            text: "お気に入り"
             textColor: root.textColor
             fontSize: content.normalTextSize
 
@@ -84,7 +84,7 @@ FocusScope {
 
         CheckBox {
             id: itemMultiplayer
-            text: "Multiplayer"
+            text: "マルチプレイヤー"
             textColor: root.textColor
             fontSize: content.normalTextSize
         }

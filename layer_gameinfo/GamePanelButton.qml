@@ -45,7 +45,7 @@ Rectangle {
         color: root.focus ? "#eee" : "#666"
         font {
             pixelSize: vpx(18)
-            family: globalFonts.sans
+            family: boldFont.name
             bold: true
         }
         anchors.centerIn: parent

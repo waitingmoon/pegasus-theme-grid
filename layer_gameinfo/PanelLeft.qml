@@ -48,7 +48,7 @@ Item {
             horizontalAlignment: Text.AlignJustify
             font {
                 pixelSize: vpx(16)
-                family: globalFonts.sans
+                family: regularFont.name
             }
         }
     }
@@ -71,12 +71,12 @@ Item {
             spacing: playtimes.labelSpacing
 
             Text {
-                text: "last played:"
+                text: "最後のプレイ:"
                 width: parent.width * 0.5
                 color: playtimes.labelColor
                 font {
                     pixelSize: playtimes.labelFontSize
-                    family: globalFonts.sans
+                    family: regularFont.name
                     capitalization: Font.AllUppercase
                 }
                 horizontalAlignment: Text.AlignRight
@@ -87,24 +87,24 @@ Item {
                     if (!game)
                         return "-";
                     if (isNaN(game.lastPlayed))
-                        return "never";
+                        return "未プレイ";
 
                     var now = new Date();
 
                     var diffHours = (now.getTime() - game.lastPlayed.getTime()) / 1000 / 60 / 60;
                     if (diffHours < 24 && now.getDate() === game.lastPlayed.getDate())
-                        return "today";
+                        return "今日";
 
                     var diffDays = Math.round(diffHours / 24);
                     if (diffDays <= 1)
-                        return "yesterday";
+                        return "昨日";
 
-                    return diffDays + " days ago"
+                    return diffDays + " 日前"
                 }
                 color: "#eee"
                 font {
                     pixelSize: playtimes.labelFontSize
-                    family: globalFonts.sans
+                    family: regularFont.name
                 }
             }
         }
@@ -114,12 +114,12 @@ Item {
             spacing: playtimes.labelSpacing
 
             Text {
-                text: "play time:"
+                text: "プレイ時間:"
                 width: parent.width * 0.5
                 color: playtimes.labelColor;
                 font {
                     pixelSize: playtimes.labelFontSize
-                    family: globalFonts.sans
+                    family: regularFont.name
                     capitalization: Font.AllUppercase
                 }
                 horizontalAlignment: Text.AlignRight
@@ -132,14 +132,14 @@ Item {
 
                     var minutes = Math.ceil(game.playTime / 60)
                     if (minutes <= 90)
-                        return Math.round(minutes) + " minutes";
+                        return Math.round(minutes) + " 分";
 
-                    return parseFloat((minutes / 60).toFixed(1)) + " hours"
+                    return parseFloat((minutes / 60).toFixed(1)) + " 時間"
                 }
                 color: "#eee"
                 font {
                     pixelSize: playtimes.labelFontSize
-                    family: globalFonts.sans
+                    family: regularFont.name
                 }
             }
         }
@@ -153,7 +153,7 @@ Item {
 
         GamePanelButton {
             id: toggleFavBtn
-            text: "Toggle favorite on/off" // FIXME: translate
+            text: "お気に入り登録/解除" // FIXME: translate
 
             property bool isFavorite: (game && game.favorite) || false
             function toggleFav() {
@@ -198,7 +198,7 @@ Item {
         }
         GamePanelButton {
             id: launchBtn
-            text: "Launch"
+            text: "プレイ"
             lineHeight: 2.5
 
             focus: true

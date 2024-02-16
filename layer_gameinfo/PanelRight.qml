@@ -69,7 +69,7 @@ Item {
                 bold: true
                 pixelSize: vpx(30)
                 capitalization: Font.SmallCaps
-                family: globalFonts.sans
+                family: regularFont.name
             }
 
             visible: parent.status != Image.Ready && parent.status != Image.Loading
@@ -119,7 +119,7 @@ Item {
         color: "#eee"
         font {
             pixelSize: vpx(18)
-            family: globalFonts.sans
+            family: regularFont.name
         }
 
         visible: text
@@ -138,7 +138,7 @@ Item {
         color: "#eee"
         font {
             pixelSize: vpx(16)
-            family: globalFonts.sans
+            family: regularFont.name
         }
         maximumLineCount: 4
         elide: Text.ElideRight

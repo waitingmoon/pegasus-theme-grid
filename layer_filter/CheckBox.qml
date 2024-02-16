@@ -44,7 +44,7 @@ Row {
             font {
                 bold: true
                 pixelSize: parent.height
-                family: globalFonts.sans
+                family: regularFont.name
             }
 
             anchors.fill: parent
@@ -67,7 +67,7 @@ Row {
         color: "#eee"
         font {
             bold: root.activeFocus
-            family: globalFonts.sans
+            family: regularFont.name
         }
     }
 

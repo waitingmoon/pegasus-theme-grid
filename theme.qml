@@ -24,6 +24,10 @@ import "layer_platform"
 
 
 FocusScope {
+
+	FontLoader { id: regularFont; source: "assets/fonts/NotoSansJP-Regular.ttf" }
+	FontLoader { id: boldFont; source: "assets/fonts/NotoSansJP-Bold.ttf" }
+
     Keys.onPressed: {
         if (event.isAutoRepeat)
             return;
